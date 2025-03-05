@@ -1,0 +1,69 @@
+trigger:
+  branches:
+    include:
+      - master
+
+schedules:
+- cron: "0 14 * * *"         # Daily at 2:00 PM (cron uses UTC; adjust if needed)
+  displayName: "Daily Build at 2 PM"
+  branches:
+    include:
+      - master
+  always: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- checkout: self
+
+- script: |
+    mvn clean compile
+  displayName: 'Maven Clean and Compile'
+
+- script: |
+    mvn test
+  displayName: 'Run Tests'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/surefire-reports/*.xml'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+  displayName: 'Publish Test Results'
+
+- script: |
+    mvn package
+  displayName: 'Maven Package'
+
+# Send email notification with test results
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Configure your SMTP settings here
+      $smtpServer = "smtp.example.com"
+      $smtpPort = 25  # Adjust if needed
+      $smtpFrom = "ci@example.com"
+      $smtpTo = "dhiral@zerotimesolutions.com"
+      
+      $buildNumber = "$(Build.BuildNumber)"
+      $buildStatus = "$(Build.Status)"
+      $buildUrl = "$(Build.BuildUri)"
+      
+      $subject = "Test Results for Build $buildNumber: $buildStatus"
+      $body = @"
+      <p>Test results for Build $buildNumber:</p>
+      <p>Status: $buildStatus</p>
+      <p>View details: <a href='$buildUrl'>$buildUrl</a></p>
+"@
+      try {
+          Send-MailMessage -From $smtpFrom -To $smtpTo -Subject $subject -Body $body -BodyAsHtml -SmtpServer $smtpServer -Port $smtpPort
+          Write-Host "Email sent successfully."
+      }
+      catch {
+          Write-Error "Error sending email: $_"
+      }
+  condition: always()
+  displayName: 'Send Email Notification'

@@ -1,0 +1,55 @@
+pipeline {
+    agent any
+
+    triggers {
+        // Schedule the job to run daily at 2 AM (adjust cron as needed)
+        cron('0 14 * * *')
+     }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'mvn clean compile'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn clean test-compile exec:java'
+            }
+            post {
+                always {
+                    // Archive test results so they show in Jenkins UI
+                    junit 'target/surefire-reports/*.xml'
+                    
+                    // Send email with test results
+                    emailext (
+                        to: 'dhiral@zerotimesolutions.com'
+                        subject: "Test Results for Build ${env.BUILD_NUMBER}: ${currentBuild.currentResult}",
+                        body: """
+                              <p>Test results for Build ${env.BUILD_NUMBER}:</p>
+                              <p>Result: ${currentBuild.currentResult}</p>
+                              <p>View details: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
+                              """,
+                        recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+                        mimeType: 'text/html'
+                    )
+                }
+            }
+        }
+        stage('Package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+    }
+    post {
+        failure {
+            echo 'Build failed. Check logs for details.'
+        }
+    }
+}
