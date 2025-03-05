@@ -66,4 +66,4 @@ steps:
           Write-Error "Error sending email: $_"
       }
   condition: always()
-  displayName: 'Send Email Notification'
+  displayName: 'Send Email Notification'   
