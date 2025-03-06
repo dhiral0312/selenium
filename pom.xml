@@ -176,6 +176,7 @@
           </executions>
           <configuration>
             <mainClass>com.selemiumautomation.Test</mainClass>
+            <classpathScope>test</classpathScope> 
           </configuration>
         </plugin>
         <plugin>
