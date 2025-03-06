@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'mvn clean test-compile exec:java'
+                sh 'cd selenium_project && mvn clean test-compile exec:java'
             }
             post {
                 always {
