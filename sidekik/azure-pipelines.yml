@@ -42,28 +42,38 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      # Configure your SMTP settings here
-      $smtpServer = "smtp.example.com"
-      $smtpPort = 25  # Adjust if needed
-      $smtpFrom = "ci@example.com"
+      $smtpServer = "smtp.gmail.com"
+      $smtpPort = 587
+      $smtpFrom = "dhiral@zerotimesolutions.com"
       $smtpTo = "dhiral@zerotimesolutions.com"
-      
-      $buildNumber = "$(Build.BuildNumber)"
-      $buildStatus = "$(Build.Status)"
-      $buildUrl = "$(Build.BuildUri)"
-      
+      $smtpUsername = "your-email@gmail.com"
+      $smtpPassword = "your-app-password"  # Use App Password, NOT your normal password!
+
       $subject = "Test Results for Build $buildNumber: $buildStatus"
       $body = @"
       <p>Test results for Build $buildNumber:</p>
       <p>Status: $buildStatus</p>
       <p>View details: <a href='$buildUrl'>$buildUrl</a></p>
-"@
-      try {
-          Send-MailMessage -From $smtpFrom -To $smtpTo -Subject $subject -Body $body -BodyAsHtml -SmtpServer $smtpServer -Port $smtpPort
-          Write-Host "Email sent successfully."
-      }
-      catch {
-          Write-Error "Error sending email: $_"
-      }
+    "@
+
+    try {
+    $smtpClient = New-Object System.Net.Mail.SmtpClient($smtpServer, $smtpPort)
+    $smtpClient.EnableSsl = $true
+    $smtpClient.Credentials = New-Object System.Net.NetworkCredential($smtpUsername, $smtpPassword)
+    
+    $mailMessage = New-Object System.Net.Mail.MailMessage
+    $mailMessage.From = $smtpFrom
+    $mailMessage.To.Add($smtpTo)
+    $mailMessage.Subject = $subject
+    $mailMessage.Body = $body
+    $mailMessage.IsBodyHtml = $true
+
+    $smtpClient.Send($mailMessage)
+    Write-Host "Email sent successfully."
+  }
+  catch {
+    Write-Error "Error sending email: $_"
+}
+
   condition: always()
   displayName: 'Send Email Notification'   
