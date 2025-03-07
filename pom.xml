@@ -63,7 +63,6 @@
       <artifactId>poi-ooxml</artifactId>
       <version>5.4.0</version>
     </dependency>
-
     <!--
     https://mvnrepository.com/artifact/fr.opensagres.xdocreport/fr.opensagres.xdocreport.converter.docx.xwpf -->
     <dependency>
@@ -160,7 +159,7 @@
           <version>3.0.0</version>
           <configuration>
             <mainClass>com.selemiumautomation.Test</mainClass>
-             <classpathScope>test</classpathScope>
+            <classpathScope>test</classpathScope>
           </configuration>
         </plugin>
         <plugin>
@@ -176,7 +175,7 @@
           </executions>
           <configuration>
             <mainClass>com.selemiumautomation.Test</mainClass>
-            <classpathScope>test</classpathScope> 
+            <classpathScope>test</classpathScope>
           </configuration>
         </plugin>
         <plugin>

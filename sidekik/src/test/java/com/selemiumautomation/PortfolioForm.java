@@ -2,7 +2,7 @@ package com.selemiumautomation;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.PrintWriter;
@@ -25,18 +25,28 @@ public class PortfolioForm {
             logWriter.println("✅ Clicked on 'Add New Portfolio' button.");
 
             // Select a random Material Type
-            WebElement materialTypeDropdown = wait
-                    .until(ExpectedConditions.elementToBeClickable(By.name("materialType")));
-            Select materialTypeSelect = new Select(materialTypeDropdown);
-            List<WebElement> options = materialTypeSelect.getOptions();
+             try {
+                WebElement materialTypeDropdown = wait
+                        .until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@role='combobox'])[1]")));
+                materialTypeDropdown.click();
 
-            if (options.size() > 1) {
-                Random random = new Random();
-                int randomIndex = random.nextInt(options.size());
-                materialTypeSelect.selectByIndex(randomIndex);
-                logWriter.println("📌 Selected 'Material Type': " + options.get(randomIndex).getText());
-            } else {
-                logWriter.println("⚠️ No options available in 'Material Type' dropdown.");
+                // Wait for dropdown to expand
+                wait.until(ExpectedConditions.attributeToBe(materialTypeDropdown, "aria-expanded", "true"));
+
+                // Fetch all service options
+                List<WebElement> materialOptions = wait
+                        .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@role='option']")));
+
+                if (!materialOptions.isEmpty()) {
+                    int randomIndex = new Random().nextInt(materialOptions.size());
+                    WebElement selectedService = materialOptions.get(randomIndex);
+                    selectedService.click();
+                    logWriter.println("📌 Selected 'Material Type': " + materialOptions.get(randomIndex).getText());
+                } else {
+                    logWriter.println("⚠️ No options available in 'Material Type' dropdown.");
+                }
+            } catch (Exception e) {
+                logWriter.println("❌ Error selecting Material Type in Portfolio form: " + e.getMessage());
             }
 
             // Enter Material Name
