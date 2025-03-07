@@ -41,9 +41,9 @@ public class FormFiller {
                     ExpectedConditions.presenceOfElementLocated(By.name("shortIntro")),
                     ExpectedConditions.presenceOfElementLocated(By.name("bankName")),
                     ExpectedConditions.presenceOfElementLocated(By.xpath(
-                            "//div[contains(@class, 'flex') and contains(@class, 'justify-center') and contains(@class, 'items-center') and contains(@class, 'h-[80%]')]")),
+                        "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]")),
                     ExpectedConditions.presenceOfElementLocated(By.xpath(
-                        "//div[contains(@class, 'flex') and contains(@class, 'flex-col') and contains(@class, 'justify-center') and contains(@class, 'py-12') and contains(@class, 'cursor-pointer')]"))));
+                        "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))));
                 
                 if (Utils.isElementPresent(driver, By.name("firstName"))) {
                     logWriter.println("✅ Detected 'Basic Details' Form.");
@@ -55,11 +55,11 @@ public class FormFiller {
                     logWriter.println("✅ Detected 'Payment Info' Form.");
                     PaymentInfoForm.fill(driver, logWriter);
                 } else if (Utils.isElementPresent(driver, By.xpath(
-                        "//div[contains(@class, 'flex') and contains(@class, 'justify-center') and contains(@class, 'items-center') and contains(@class, 'h-[80%]')]"))) {
+                    "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]"))) {
                     logWriter.println("✅ Detected 'My Portfolio' Form.");
                     PortfolioForm.fill(driver, logWriter);
                 } else if (Utils.isElementPresent(driver, By.xpath(
-                    "//div[contains(@class, 'flex') and contains(@class, 'flex-col') and contains(@class, 'justify-center') and contains(@class, 'py-12') and contains(@class, 'cursor-pointer')]"))){
+                    "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))){
                     logWriter.println("✅ Detected 'My Package' Form.");
                     PackageForm.fill(driver, logWriter);
                 }else {
@@ -77,10 +77,10 @@ public class FormFiller {
                 if (!Utils.isElementPresent(driver, By.name("firstName")) &&
                         !Utils.isElementPresent(driver, By.name("shortIntro")) &&
                         !Utils.isElementPresent(driver, By.name("bankName")) &&
-                        !Utils.isElementPresent(driver, By.xpath(
-                                "//div[contains(@class, 'flex') and contains(@class, 'justify-center') and contains(@class, 'items-center') and contains(@class, 'h-[80%]')]"))&&
-                        !Utils.isElementPresent(driver, By.xpath(
-                                "//div[contains(@class, 'flex') and contains(@class, 'flex-col') and contains(@class, 'justify-center') and contains(@class, 'py-12') and contains(@class, 'cursor-pointer')]"))) {
+                        !Utils.isElementPresent(driver,By.xpath(
+                            "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]"))&&
+                        !Utils.isElementPresent(driver,By.xpath(
+                            "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))) {
                     logWriter.println("✅ All forms completed. Logging out...");
                     logout(driver, logWriter);
                     break;

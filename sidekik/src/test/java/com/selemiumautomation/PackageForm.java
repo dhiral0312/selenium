@@ -15,10 +15,11 @@ public class PackageForm {
         try {
 
             // Wait for the <div> containing the SVG to be clickable
-            WebElement addNewPackage = wait.until(ExpectedConditions.elementToBeClickable(
+            // Click "Add New Package"
+            WebElement addNewPackageButton = wait.until(ExpectedConditions.elementToBeClickable(
                     By.xpath(
-                            "//div[contains(@class, 'flex') and contains(@class, 'flex-col') and contains(@class, 'justify-center') and contains(@class, 'py-12') and contains(@class, 'cursor-pointer')]")));
-            addNewPackage.click();
+                            "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]")));
+            addNewPackageButton.click();
             Thread.sleep(1000); // Give time for the fields to appear
             logWriter.println("✅ Clicked on 'Add New Package' button.");
             String randomString = Utils.randomString();
@@ -182,35 +183,35 @@ public class PackageForm {
 
             // Payment Methods
             // Locate the button element that acts as the checkbox for Stripe
-            try{
-            WebElement stripeCheckboxButton = wait.until(ExpectedConditions.elementToBeClickable(
-                    By.xpath(
-                            "//div[contains(@class,'flex-row-reverse')]//label[text()='Stripe']/following-sibling::button[@role='checkbox']")));
+            try {
+                WebElement stripeCheckboxButton = wait.until(ExpectedConditions.elementToBeClickable(
+                        By.xpath(
+                                "//div[contains(@class,'flex-row-reverse')]//label[text()='Stripe']/following-sibling::button[@role='checkbox']")));
 
-            // Log the initial state using the aria-checked attribute
-            String initialState = stripeCheckboxButton.getAttribute("aria-checked");
-            logWriter.println("Initial Stripe Checkbox state: " + initialState);
+                // Log the initial state using the aria-checked attribute
+                String initialState = stripeCheckboxButton.getAttribute("aria-checked");
+                logWriter.println("Initial Stripe Checkbox state: " + initialState);
 
-            // If not selected, click the checkbox using Actions
-            if (!"true".equalsIgnoreCase(initialState)) {
-                Actions actions = new Actions(driver);
-                actions.moveToElement(stripeCheckboxButton).click().perform();
-                // Wait until the aria-checked attribute becomes "true"
-                wait.until(ExpectedConditions.attributeToBe(stripeCheckboxButton, "aria-checked", "true"));
-                logWriter.println("Checkbox Stripe has been selected.");
-            } else {
-                logWriter.println("Checkbox Stripe is already selected.");
+                // If not selected, click the checkbox using Actions
+                if (!"true".equalsIgnoreCase(initialState)) {
+                    Actions actions = new Actions(driver);
+                    actions.moveToElement(stripeCheckboxButton).click().perform();
+                    // Wait until the aria-checked attribute becomes "true"
+                    wait.until(ExpectedConditions.attributeToBe(stripeCheckboxButton, "aria-checked", "true"));
+                    logWriter.println("Checkbox Stripe has been selected.");
+                } else {
+                    logWriter.println("Checkbox Stripe is already selected.");
+                }
+
+                // Log the final state
+                String finalState = stripeCheckboxButton.getAttribute("aria-checked");
+                logWriter.println("Final Stripe Checkbox state: " + finalState);
+
+                Utils.submitForm(driver, logWriter, "Payment Methods");
+            } catch (Exception e) {
+                logWriter.println("❌ Error selecting Payment Methods: " + e.getMessage());
             }
-
-            // Log the final state
-            String finalState = stripeCheckboxButton.getAttribute("aria-checked");
-            logWriter.println("Final Stripe Checkbox state: " + finalState);
-
-            Utils.submitForm(driver, logWriter, "Payment Methods");
-        } catch (Exception e) {
-            logWriter.println("❌ Error selecting Payment Methods: " + e.getMessage());
-        }
-        Utils.submitForm(driver, logWriter, "Package");
+            Utils.submitForm(driver, logWriter, "Package");
         } catch (
 
         Exception e) {

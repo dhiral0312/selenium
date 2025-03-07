@@ -5,7 +5,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 import java.io.PrintWriter;
 import java.util.List;
 import java.util.Random;
@@ -18,14 +17,16 @@ public class PortfolioForm {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
             // Click "Add New Portfolio"
-            WebElement portfolioContainer = wait.until(ExpectedConditions.elementToBeClickable(
-                    By.xpath("//div[contains(@class, 'flex') and contains(@class, 'justify-center') and contains(@class, 'items-center') and contains(@class, 'h-[80%]')]")));
-            portfolioContainer.click();
+            WebElement addNewPortfolioButton = wait.until(ExpectedConditions.elementToBeClickable(
+                    By.xpath(
+                            "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]")));
+            addNewPortfolioButton.click();
             Thread.sleep(1000);
             logWriter.println("✅ Clicked on 'Add New Portfolio' button.");
 
             // Select a random Material Type
-            WebElement materialTypeDropdown = wait.until(ExpectedConditions.elementToBeClickable(By.name("materialType")));
+            WebElement materialTypeDropdown = wait
+                    .until(ExpectedConditions.elementToBeClickable(By.name("materialType")));
             Select materialTypeSelect = new Select(materialTypeDropdown);
             List<WebElement> options = materialTypeSelect.getOptions();
 
@@ -39,7 +40,8 @@ public class PortfolioForm {
             }
 
             // Enter Material Name
-            WebElement materialName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("materialName")));
+            WebElement materialName = wait
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.name("materialName")));
             materialName.sendKeys("Sample Portfolio Item");
             logWriter.println("📌 Entered Material Name: Sample Portfolio Item");
 
@@ -49,7 +51,8 @@ public class PortfolioForm {
                 WebElement coverImageUpload = wait.until(ExpectedConditions.presenceOfElementLocated(
                         By.xpath("//span[contains(text(), 'Upload Cover Image')]")));
                 Thread.sleep(1000);
-                WebElement coverImageInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']")));
+                WebElement coverImageInput = wait
+                        .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']")));
                 if (!coverImageInput.isDisplayed()) {
                     ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='block';", coverImageInput);
                 }
@@ -61,7 +64,8 @@ public class PortfolioForm {
                 WebElement fileUpload = wait.until(ExpectedConditions.presenceOfElementLocated(
                         By.xpath("//span[contains(text(), 'Upload Files')]")));
                 Thread.sleep(1000);
-                WebElement fileInput = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']")));
+                WebElement fileInput = wait
+                        .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[@type='file']")));
                 if (!fileInput.isDisplayed()) {
                     ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='block';", fileInput);
                 }
@@ -78,7 +82,8 @@ public class PortfolioForm {
             logWriter.println("📌 Entered Portfolio Link: https://example.com");
 
             // Toggle Switch
-            WebElement toggleSwitch = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@role='switch']")));
+            WebElement toggleSwitch = wait
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@role='switch']")));
             if ("false".equals(toggleSwitch.getAttribute("aria-checked"))) {
                 toggleSwitch.click();
                 logWriter.println("📌 Enabled the Toggle Switch.");

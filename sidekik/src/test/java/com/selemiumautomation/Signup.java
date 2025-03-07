@@ -73,14 +73,14 @@ public class Signup {
                 WebElement checkbox = wait.until(ExpectedConditions.elementToBeClickable(
                         By.xpath("//button[@role='checkbox' and @aria-checked='false']")));
                 checkbox.click();
+            
 
                 // Locate and click the submission button
                 WebElement submitButton = driver
                         .findElement(By.xpath("//button[text()='Sign up as a service provider']"));
                 submitButton.click();
-
                 // Optional: wait a few seconds for the toast to appear
-                Thread.sleep(3000);
+                Thread.sleep(10000);
 
                 // Attempt to capture the toast message using a try-catch
                 String toastMessage = "No toast message";
