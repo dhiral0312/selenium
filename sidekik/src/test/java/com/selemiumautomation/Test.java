@@ -60,21 +60,24 @@ public class Test {
                 if (driver.getCurrentUrl().contains("dashboard")) {
                     logWriter.println("✅ Successfully logged in.");
                     logSiteErrors(driver, logWriter);
-                    // ✅ Corrected FormFiller call with all required parameters
-                    FormFiller.fillForm(driver, logWriter, profileImagePath, email);
-                    logSiteErrors(driver, logWriter);
 
-                    // Upload profile image
+                    // ✅ Corrected FormFiller call with all required parameters
+                   //FormFiller.fillForm(driver, logWriter, profileImagePath, email);
+                    //logSiteErrors(driver, logWriter);
+
+                    // ✅ Call CustomPackage after filling the form
+                    CustomPackage.handleCustomPackage(driver, logWriter);
+                    logSiteErrors(driver, logWriter);
 
                 } else {
                     logWriter.println("❌ Login failed for user: " + username);
-                    FormFiller.takeScreenshot(driver, "LoginFailure"); // Capture login failure screenshot
+                    Utils.takeScreenshot(driver, "LoginFailure"); // Capture login failure screenshot
 
                 }
             }
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
-            FormFiller.takeScreenshot(driver, "TestFailure"); // Call the screenshot method from FormFiller.java
+            Utils.takeScreenshot(driver, "TestFailure"); // Call the screenshot method from FormFiller.java
         } finally {
             driver.quit();
         }
@@ -84,12 +87,8 @@ public class Test {
         try {
             // Find all error messages on the page
             List<WebElement> errorMessages = driver.findElements(By.xpath(
-                    "//*[contains(@class, 'text-[0.8rem] font-medium text-sk-red text-left pl-4') or " + // Case 1:
-                                                                                                         // Invalid
-                                                                                                         // Email,
-                                                                                                         // Password
-                            "contains(@class, 'border-sk-red bg-sk-red text-background') or " + // Case 2: Toast Error
-                                                                                                // Message
+                    "//*[contains(@class, 'text-[0.8rem] font-medium text-sk-red text-left pl-4') or " + // Case 1:Invalid Email, Password
+                            "contains(@class, 'border-sk-red bg-sk-red text-background') or " + // Case 2: Toast Error Message
                             "contains(@class, 'text-sm font-semibold')]" // Case 3: Toast Inner Message
             ));
 
@@ -98,7 +97,7 @@ public class Test {
                 logWriter.println("✅ No error messages found.");
             } else {
                 logWriter.println("⚠️ Error messages found:");
-                FormFiller.takeScreenshot(driver, "TestFailure"); // Call the screenshot method from FormFiller.java
+                Utils.takeScreenshot(driver, "TestFailure"); // Call the screenshot method from FormFiller.java
                 for (WebElement error : errorMessages) {
                     // Log the text content of each error message
                     logWriter.println("  " + error.getText());

@@ -1,17 +1,10 @@
 package com.selemiumautomation;
 
-import org.apache.commons.io.FileUtils;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.io.File;
-import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
 
 public class FormFiller {
 
@@ -111,18 +104,5 @@ public class FormFiller {
         }
     }
 
-    public static void takeScreenshot(WebDriver driver, String testName) {
-       String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String fileName = "Screenshots/" + testName + "_" + timestamp + ".png";
-
-        try {
-            // Take screenshot
-            File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            // Save screenshot to desired location
-            FileUtils.copyFile(screenshot, new File(fileName));
-            System.out.println("Screenshot saved: " + fileName);
-        } catch (IOException e) {
-            System.err.println("Error while saving screenshot: " + e.getMessage());
-        }
-    }
+  
 }
