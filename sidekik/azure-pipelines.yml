@@ -45,9 +45,9 @@ steps:
       $smtpServer = "smtp.gmail.com"
       $smtpPort = 587
       $smtpFrom = "dhiral@zerotimesolutions.com"
-      $smtpTo = "dhiral@zerotimesolutions.com"
-      $smtpUsername = "your-email@gmail.com"
-      $smtpPassword = "your-app-password"  # Use App Password, NOT your normal password!
+      $smtpTo = "kelvin@zerotimesolutions.com"
+      $smtpUsername = "dhiral@zerotimesolutions.com"
+      $smtpPassword = "siqy zekx mjrb kloi"  # Use App Password, NOT your normal password!
 
       $subject = "Test Results for Build $buildNumber: $buildStatus"
       $body = @"

@@ -1,14 +1,11 @@
 package com.selemiumautomation;
 
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.PrintWriter;
 import java.time.Duration;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
 
@@ -70,125 +67,17 @@ public class CustomPackage {
             } catch (Exception e) {
                 logWriter.println("❌ Error selecting service in Custom Package form: " + e.getMessage());
             }
-            // Selecting Start Date
-            try {
-                // Click the Start Date button
-                WebElement startDateButton = wait.until(ExpectedConditions.elementToBeClickable(
-                        By.xpath(
-                                "//button[contains(@class, 'text-left') and contains(@class, 'border-gray-300')][1]")));
-                startDateButton.click();
-                logWriter.println("📅 Clicked on Start Date button.");
+            // ✅ Select Start Date (2 days from today)
+            Utils.selectDate(driver, wait,
+                    "(//button[contains(@class, 'text-left') and contains(@class, 'border-gray-300')])[1]", 2,
+                    logWriter);
 
-                // Wait for the date picker to appear
-                wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@role='dialog']")));
+            // ✅ Select End Date (5 days from today)
+            Thread.sleep(1000); // Ensures Start Date picker is closed before opening End Date
+            Utils.selectDate(driver, wait,
+                    "(//button[contains(@class, 'text-left') and contains(@class, 'border-gray-300')])[2]", 5,
+                    logWriter);
 
-                // Get today's date and the target date (+2 days)
-                LocalDate today = LocalDate.now();
-                LocalDate targetDate = today.plusDays(2);
-                String targetDay = targetDate.format(DateTimeFormatter.ofPattern("d")); // e.g., "12", "25"
-
-                // Locate all selectable dates (excluding 'Today')
-                List<WebElement> dateOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                        By.xpath(
-                                "//button[contains(@class, 'aria-selected:opacity-100') and not(contains(@aria-label, 'Today'))]")));
-
-                boolean dateSelected = false;
-
-                for (WebElement dateOption : dateOptions) {
-                    String dayText = dateOption.getText().trim();
-                    if (dayText.equals(targetDay)) {
-                        Actions actions = new Actions(driver);
-                        actions.moveToElement(dateOption).click().perform(); // Ensures selection
-                        logWriter.println("✔ Selected Start Date: " + targetDay);
-                        dateSelected = true;
-                        break;
-                    }
-                }
-
-                if (!dateSelected) {
-                    logWriter.println("⚠️ Target date not found. Selecting a random available date.");
-                    if (!dateOptions.isEmpty()) {
-                        WebElement randomDate = dateOptions.get(new Random().nextInt(dateOptions.size()));
-                        Actions actions = new Actions(driver);
-                        actions.moveToElement(randomDate).click().perform();
-                        logWriter.println("✔ Selected Random Available Date: " + randomDate.getText());
-                    } else {
-                        logWriter.println("⚠️ No selectable dates found.");
-                    }
-                }
-
-            } catch (Exception e) {
-                logWriter.println("❌ Error selecting Start Date: " + e.getMessage());
-            }
-            // Selecting End Date
-            try {
-                // Ensure Start Date picker is closed before opening End Date picker
-                Thread.sleep(1000);
-
-                // Click the End Date button
-                WebElement endDateButton = wait.until(ExpectedConditions.elementToBeClickable(
-                        By.xpath(
-                                "(//button[contains(@class, 'text-left') and contains(@class, 'border-gray-300')])[2]"))); // Ensure
-                                                                                                                           // correct
-                                                                                                                           // button
-
-                endDateButton.click();
-                logWriter.println("📅 Clicked on End Date button.");
-
-                // Ensure the End Date picker is visible
-                @SuppressWarnings("unused")
-                WebElement datePicker = wait.until(ExpectedConditions.presenceOfElementLocated(
-                        By.xpath("//div[@role='dialog']") // Ensuring the date picker loads
-                ));
-
-                // Small delay to ensure the date elements are fully loaded
-                Thread.sleep(1000);
-
-                // Get today's date and target date (+5 days)
-                LocalDate today = LocalDate.now();
-                LocalDate targetDate = today.plusDays(5);
-                String targetDay = targetDate.format(DateTimeFormatter.ofPattern("d")); // Extracts only the day number
-
-                // Locate all selectable dates
-                List<WebElement> dateOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                        By.xpath("//button[contains(@class, 'h-8') and not(contains(@aria-label, 'Today'))]")));
-
-                boolean dateSelected = false;
-
-                for (WebElement dateOption : dateOptions) {
-                    String dayText = dateOption.getText().trim();
-                    if (dayText.equals(targetDay)) {
-                        try {
-                            Actions actions = new Actions(driver);
-                            actions.moveToElement(dateOption).pause(500).click().perform(); // Ensures proper selection
-                            logWriter.println("✔ Selected End Date: " + targetDay);
-                            dateSelected = true;
-                            break;
-                        } catch (Exception clickError) {
-                            logWriter.println("⚠️ Could not click on the specific date, trying another.");
-                        }
-                    }
-                }
-
-                // If the preferred date isn’t found, select a random available date
-                if (!dateSelected) {
-                    logWriter.println("⚠️ Target date not found. Selecting a random available date.");
-                    if (!dateOptions.isEmpty()) {
-                        WebElement randomDate = dateOptions.get(new Random().nextInt(dateOptions.size()));
-                        Actions actions = new Actions(driver);
-                        actions.moveToElement(randomDate).pause(500).click().perform();
-                        logWriter.println("✔ Selected Random Available End Date: " + randomDate.getText());
-                    } else {
-                        logWriter.println("⚠️ No selectable dates found.");
-                    }
-                }
-
-                // Small delay to ensure selection registers
-                Thread.sleep(1000);
-
-            } catch (Exception e) {
-                logWriter.println("❌ Error selecting End Date: " + e.getMessage());
-            }
             // Add New Buyer
             WebElement addNewBuyer = wait.until(
                     ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Add New Buyer')]")));
@@ -199,123 +88,17 @@ public class CustomPackage {
             Utils.fillTextField(driver, "lastName", randomString, logWriter);
 
             Utils.fillTextField(driver, "email", randomString + "@gmail.com", logWriter);
-            // selecting country
-            try {
-                WebElement countryDropdown = wait
-                        .until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@role='combobox'])[2]")));
-                countryDropdown.click();
+            // ✅ Select Country (Dropdown 2)
+            Utils.selectDropdown(driver, wait, "(//button[@role='combobox'])[2]", "Country", logWriter);
 
-                // Wait for dropdown to expand
-                wait.until(ExpectedConditions.attributeToBe(countryDropdown, "aria-expanded",
-                        "true"));
+            // ✅ Select State (Dropdown 3)
+            Utils.selectDropdown(driver, wait, "(//button[@role='combobox'])[3]", "State", logWriter);
 
-                // Fetch all country options
-                List<WebElement> countryOptions = wait
-                        .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@role='option']")));
-
-                if (!countryOptions.isEmpty()) {
-                    int randomIndex = new Random().nextInt(countryOptions.size());
-                    WebElement selectedCountry = countryOptions.get(randomIndex);
-                    selectedCountry.click();
-                    logWriter.println("✔ Selected Country: " + selectedCountry.getText());
-                } else {
-                    logWriter.println("⚠️ No country options found.");
-                }
-            } catch (Exception e) {
-                logWriter.println("❌ Error selecting country in Custom Package form: " +
-                        e.getMessage());
-            }
-            // selecting state
-            try {
-                WebElement stateDropdown = wait
-                        .until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@role='combobox'])[3]")));
-                stateDropdown.click();
-
-                // Wait for dropdown to expand
-                wait.until(ExpectedConditions.attributeToBe(stateDropdown, "aria-expanded",
-                        "true"));
-
-                // Fetch all state options
-                List<WebElement> stateOptions = wait
-                        .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@role='option']")));
-
-                if (!stateOptions.isEmpty()) {
-                    int randomIndex = new Random().nextInt(stateOptions.size());
-                    WebElement selectedState = stateOptions.get(randomIndex);
-                    selectedState.click();
-                    logWriter.println("✔ Selected State: " + selectedState.getText());
-                } else {
-                    logWriter.println("⚠️ No state options found.");
-                }
-            } catch (Exception e) {
-                logWriter.println("❌ Error selecting state in Custom Package form: " +
-                        e.getMessage());
-            }
-            // selecting city
-            try {
-                WebElement cityDropdown = wait
-                        .until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@role='combobox'])[4]")));
-                cityDropdown.click();
-
-                // Wait for dropdown to expand
-                wait.until(ExpectedConditions.attributeToBe(cityDropdown, "aria-expanded",
-                        "true"));
-
-                // Fetch all city options
-                List<WebElement> cityOptions = wait
-                        .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@role='option']")));
-
-                if (!cityOptions.isEmpty()) {
-                    int randomIndex = new Random().nextInt(cityOptions.size());
-                    WebElement selectedCity = cityOptions.get(randomIndex);
-                    selectedCity.click();
-                    logWriter.println("✔ Selected City: " + selectedCity.getText());
-                } else {
-                    logWriter.println("⚠️ No city options found.");
-                }
-            } catch (Exception e) {
-                logWriter.println("❌ Error selecting city in Custom Package form: " +
-                        e.getMessage());
-            }
-            // Selecting Language
-            try {
-                WebElement languageInput = wait.until(ExpectedConditions.elementToBeClickable(
-                        By.xpath("//input[@role='combobox' and contains(@class,'bg-transparent')]")));
-                languageInput.click();
-                logWriter.println("📌 Clicked on Language input field.");
-
-                // Wait for the dropdown to expand
-                wait.until(ExpectedConditions.attributeToBe(languageInput, "aria-expanded",
-                        "true"));
-
-                // Fetch all available language options
-                List<WebElement> languageOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                        By.xpath("//div[@role='option']")));
-
-                if (!languageOptions.isEmpty()) {
-                    int randomIndex = new Random().nextInt(languageOptions.size());
-                    WebElement selectedLanguage = languageOptions.get(randomIndex);
-
-                    // Enter the language name into the input field before clicking
-                    String languageText = selectedLanguage.getText();
-                    languageInput.sendKeys(languageText);
-                    selectedLanguage.click();
-                    logWriter.println("✔ Selected Language: " + languageText);
-
-                    // Wait until the dropdown closes before proceeding
-                    wait.until(ExpectedConditions.attributeToBe(languageInput, "aria-expanded",
-                            "false"));
-                    logWriter.println("📌 Language dropdown closed.");
-
-                    // Add a slight delay to ensure proper field switch
-                    Thread.sleep(500);
-                } else {
-                    logWriter.println("⚠️ No language options found.");
-                }
-            } catch (Exception e) {
-                logWriter.println("❌ Error selecting language in Custom Package form: " +
-                        e.getMessage());
-            }
+            // ✅ Select City (Dropdown 4)
+            Utils.selectDropdown(driver, wait, "(//button[@role='combobox'])[4]", "City", logWriter);
+            // ✅ Select Language (Ensures dropdown closes after selection)
+            Utils.selectLanguage(driver, wait, "//input[@role='combobox' and contains(@class,'bg-transparent')]",
+                    logWriter);
 
             // ✅ Now, enter Company Name after ensuring language selection is complete
             try {
@@ -393,22 +176,22 @@ public class CustomPackage {
                 // Locate the Submit button
                 WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(
                         By.xpath("//button[contains(@class, 'bg-sk-red') and contains(text(), 'Save')]")));
-            
+
                 // Wait for any blocking toast notifications to disappear
                 wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//li[@role='status']")));
-            
+
                 // Scroll the button into view using Actions (instead of JavaScript)
                 Actions actions = new Actions(driver);
                 actions.moveToElement(submitButton).perform();
-            
+
                 // Give a short delay before clicking (to allow smooth interaction)
                 Thread.sleep(500);
-            
+
                 // Click the Submit button normally
                 submitButton.click();
-                
+
                 logWriter.println("📌 Clicked 'Submit' button.");
-            
+
                 // Optional: Wait for confirmation message or next page load
                 Thread.sleep(2000);
             } catch (Exception e) {
