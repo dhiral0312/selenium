@@ -65,13 +65,13 @@ public class Test {
                    FormFiller.fillForm(driver, logWriter, profileImagePath, email);
                     logSiteErrors(driver, logWriter);
 
-                    // ✅ Call CustomPackage after filling the form
-                    CustomPackage.handleCustomPackage(driver, logWriter);
-                    logSiteErrors(driver, logWriter);
+                    // // ✅ Call CustomPackage after filling the form
+                    // CustomPackage.handleCustomPackage(driver, logWriter);
+                    // logSiteErrors(driver, logWriter);
 
-                    // ✅ Call AddNewBuyer after CustomPackage
-                    AddNewBuyer.addNewBuyer(driver, logWriter);
-                    logSiteErrors(driver, logWriter);
+                    // // ✅ Call AddNewBuyer after CustomPackage
+                    // AddNewBuyer.addNewBuyer(driver, logWriter);
+                    // logSiteErrors(driver, logWriter);
 
                 } else {
                     logWriter.println("❌ Login failed for user: " + username);

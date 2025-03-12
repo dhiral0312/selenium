@@ -15,7 +15,8 @@ public class FormFiller {
 
         try {
             logWriter.println("🔹 Clicking 'Complete your profile' button...");
-            WebElement completeProfileButton = driver.findElement(By.xpath("//button[contains(text(),'Complete your profile')]"));
+            WebElement completeProfileButton = driver
+                    .findElement(By.xpath("//button[contains(text(),'Complete your profile')]"));
             completeProfileButton.click();
             Thread.sleep(5000); // Allow time for page transition
         } catch (Exception e) {
@@ -30,14 +31,14 @@ public class FormFiller {
 
             try {
                 wait.until(ExpectedConditions.or(
-                    ExpectedConditions.presenceOfElementLocated(By.name("firstName")),
-                    ExpectedConditions.presenceOfElementLocated(By.name("shortIntro")),
-                    ExpectedConditions.presenceOfElementLocated(By.name("bankName")),
-                    ExpectedConditions.presenceOfElementLocated(By.xpath(
-                        "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]")),
-                    ExpectedConditions.presenceOfElementLocated(By.xpath(
-                        "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))));
-                
+                        ExpectedConditions.presenceOfElementLocated(By.name("firstName")),
+                        ExpectedConditions.presenceOfElementLocated(By.name("shortIntro")),
+                        ExpectedConditions.presenceOfElementLocated(By.name("bankName")),
+                        ExpectedConditions.presenceOfElementLocated(By.xpath(
+                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]")),
+                        ExpectedConditions.presenceOfElementLocated(By.xpath(
+                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))));
+
                 if (Utils.isElementPresent(driver, By.name("firstName"))) {
                     logWriter.println("✅ Detected 'Basic Details' Form.");
                     BasicDetailsForm.fill(driver, logWriter, email, profileImagePath);
@@ -48,14 +49,14 @@ public class FormFiller {
                     logWriter.println("✅ Detected 'Payment Info' Form.");
                     PaymentInfoForm.fill(driver, logWriter);
                 } else if (Utils.isElementPresent(driver, By.xpath(
-                    "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]"))) {
+                        "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]"))) {
                     logWriter.println("✅ Detected 'My Portfolio' Form.");
                     PortfolioForm.fill(driver, logWriter);
                 } else if (Utils.isElementPresent(driver, By.xpath(
-                    "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))){
+                        "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))) {
                     logWriter.println("✅ Detected 'My Package' Form.");
                     PackageForm.fill(driver, logWriter);
-                }else {
+                } else {
                     retryCount++;
                     logWriter.println("⚠️ No recognizable form detected. Retrying in 2 seconds...");
                     Thread.sleep(2000);
@@ -70,12 +71,23 @@ public class FormFiller {
                 if (!Utils.isElementPresent(driver, By.name("firstName")) &&
                         !Utils.isElementPresent(driver, By.name("shortIntro")) &&
                         !Utils.isElementPresent(driver, By.name("bankName")) &&
-                        !Utils.isElementPresent(driver,By.xpath(
-                            "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]"))&&
-                        !Utils.isElementPresent(driver,By.xpath(
-                            "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))) {
+                        !Utils.isElementPresent(driver, By.xpath(
+                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]"))
+                        &&
+                        !Utils.isElementPresent(driver, By.xpath(
+                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))) {
                     logWriter.println("✅ All forms completed. Logging out...");
-                    logout(driver, logWriter);
+                    // Call CustomPackage after filling the form
+                    logWriter.println("🔹 Calling CustomPackage...");
+                    CustomPackage.handleCustomPackage(driver, logWriter);
+
+                    // Call AddNewBuyer after CustomPackage
+                    logWriter.println("🔹 Calling AddNewBuyer...");
+                    AddNewBuyer.addNewBuyer(driver, logWriter);
+
+                    // Perform Logout
+                    logWriter.println("✅ All tasks completed. Logging out...");
+                    Utils.logout(driver, logWriter);
                     break;
                 }
 
@@ -87,22 +99,10 @@ public class FormFiller {
 
         if (retryCount >= maxRetries) {
             logWriter.println("❌ Max retries reached. No valid form detected. Attempting logout...");
-            logout(driver, logWriter);
+            Utils.logout(driver, logWriter);
         }
     }
 
-    public static void logout(WebDriver driver, PrintWriter logWriter) {
-        try {
-            logWriter.println("🔹 Logging out...");
-            WebElement profileDropdown = driver.findElement(By.xpath("//img[contains(@class, 'rounded-full') and contains(@class, 'object-cover')]"));
-            profileDropdown.click();
-            WebElement logoutButton = driver.findElement(By.xpath("//button[contains(text(),'Log Out')]"));
-            logoutButton.click();
-            logWriter.println("✅ Successfully logged out.");
-        } catch (Exception e) {
-            logWriter.println("❌ Error logging out: " + e.getMessage());
-        }
-    }
+   
 
-  
 }

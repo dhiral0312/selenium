@@ -47,13 +47,13 @@ steps:
       $smtpFrom = "dhiral@zerotimesolutions.com"
       $smtpTo = "kelvin@zerotimesolutions.com"
       $smtpUsername = "dhiral@zerotimesolutions.com"
-      $smtpPassword = "siqy zekx mjrb kloi"  # Use App Password, NOT your normal password!
+      $smtpPassword = $env:SMTP_PASSWORD  # Securely retrieved
 
-      $subject = "Test Results for Build $buildNumber: $buildStatus"
+      $subject = "Test Results for Build $env.BUILD_NUMBER - $env.BUILD_STATUS"
       $body = @"
-      <p>Test results for Build $buildNumber:</p>
-      <p>Status: $buildStatus</p>
-      <p>View details: <a href='$buildUrl'>$buildUrl</a></p>
+      <p>Test results for Build $env.BUILD_NUMBER:</p>
+      <p>Status: $env.BUILD_STATUS</p>
+      <p>View details: <a href='$buildUrl'>$env.BUILD_URL</a></p>
     "@
 
     try {

@@ -65,8 +65,8 @@ public class Utils {
         return driver.findElements(locator).size() > 0;
     }
 
-      public static void takeScreenshot(WebDriver driver, String testName) {
-       String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+    public static void takeScreenshot(WebDriver driver, String testName) {
+        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String fileName = "Screenshots/" + testName + "_" + timestamp + ".png";
 
         try {
@@ -80,7 +80,8 @@ public class Utils {
         }
     }
 
-    public static void selectDate(WebDriver driver, WebDriverWait wait, String dateButtonXpath, int daysToAdd, PrintWriter logWriter) {
+    public static void selectDate(WebDriver driver, WebDriverWait wait, String dateButtonXpath, int daysToAdd,
+            PrintWriter logWriter) {
         try {
             // ✅ Click on Date Picker Button
             WebElement dateButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(dateButtonXpath)));
@@ -89,7 +90,8 @@ public class Utils {
 
             // ✅ Wait for Date Picker Dialog to Open
             @SuppressWarnings("unused")
-            WebElement datePickerDialog = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@role='dialog']")));
+            WebElement datePickerDialog = wait
+                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@role='dialog']")));
             logWriter.println("📅 Date Picker Dialog Opened.");
 
             // ✅ Calculate Target Date
@@ -142,15 +144,17 @@ public class Utils {
                 WebElement body = driver.findElement(By.tagName("body"));
                 body.click();
                 Thread.sleep(500);
-            } catch (Exception ignore) {}
+            } catch (Exception ignore) {
+            }
 
         } catch (Exception e) {
             logWriter.println("❌ Error selecting date: " + e.getMessage());
         }
     }
 
-     // ✅ Generic method to select a random option from a dropdown
-     public static void selectDropdown(WebDriver driver, WebDriverWait wait, String dropdownXpath, String dropdownName, PrintWriter logWriter) {
+    // ✅ Generic method to select a random option from a dropdown
+    public static void selectDropdown(WebDriver driver, WebDriverWait wait, String dropdownXpath, String dropdownName,
+            PrintWriter logWriter) {
         try {
             // Click the dropdown to expand it
             WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(dropdownXpath)));
@@ -161,7 +165,8 @@ public class Utils {
             wait.until(ExpectedConditions.attributeToBe(dropdown, "aria-expanded", "true"));
 
             // Fetch all available options
-            List<WebElement> options = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@role='option']")));
+            List<WebElement> options = wait
+                    .until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@role='option']")));
 
             if (!options.isEmpty()) {
                 // Select a random option
@@ -178,11 +183,13 @@ public class Utils {
         }
     }
 
-     // ✅ Generic method to select a random language and ensure dropdown closes
-     public static void selectLanguage(WebDriver driver, WebDriverWait wait, String languageDropdownXpath, PrintWriter logWriter) {
+    // ✅ Generic method to select a random language and ensure dropdown closes
+    public static void selectLanguage(WebDriver driver, WebDriverWait wait, String languageDropdownXpath,
+            PrintWriter logWriter) {
         try {
             // Click on the language dropdown to expand it
-            WebElement languageInput = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(languageDropdownXpath)));
+            WebElement languageInput = wait
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath(languageDropdownXpath)));
             languageInput.click();
             logWriter.println("📌 Clicked on Language input field.");
 
@@ -199,8 +206,8 @@ public class Utils {
 
                 // Enter the language name into the input field before clicking
                 String languageText = selectedLanguage.getText();
-                languageInput.sendKeys(languageText);  // This ensures the dropdown recognizes the selection
-                selectedLanguage.click();  // Click the selected language
+                languageInput.sendKeys(languageText); // This ensures the dropdown recognizes the selection
+                selectedLanguage.click(); // Click the selected language
 
                 logWriter.println("✔ Selected Language: " + languageText);
 
@@ -220,6 +227,20 @@ public class Utils {
         }
     }
 
+    public static void logout(WebDriver driver, PrintWriter logWriter) {
+        try {
+            logWriter.println("🔹 Logging out...");
+            WebElement profileDropdown = driver.findElement(
+                    By.xpath("//img[contains(@class, 'rounded-full') and contains(@class, 'object-cover')]"));
+            profileDropdown.click();
+            WebElement logoutButton = driver.findElement(By.xpath("//button[contains(text(),'Log Out')]"));
+            logoutButton.click();
+            logWriter.println("✅ Successfully logged out.");
+        } catch (Exception e) {
+            logWriter.println("❌ Error logging out: " + e.getMessage());
+        }
+    }
+
     public static String randomString() {
         Random random = new Random();
         int length = 8;
@@ -228,6 +249,6 @@ public class Utils {
             int randomChar = random.nextInt(26) + 'a';
             sb.append((char) randomChar);
         }
-        return sb.toString();  // Now it returns a String
+        return sb.toString(); // Now it returns a String
     }
 }
