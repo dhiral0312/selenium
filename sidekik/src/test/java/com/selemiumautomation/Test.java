@@ -61,17 +61,17 @@ public class Test {
                     logWriter.println("✅ Successfully logged in.");
                     logSiteErrors(driver, logWriter);
 
-                //     // ✅ Corrected FormFiller call with all required parameters
-                //    FormFiller.fillForm(driver, logWriter, profileImagePath, email);
-                //     logSiteErrors(driver, logWriter);
+                    // ✅ Corrected FormFiller call with all required parameters
+                   FormFiller.fillForm(driver, logWriter, profileImagePath, email);
+                    logSiteErrors(driver, logWriter);
 
-                //     // ✅ Call CustomPackage after filling the form
-                //     CustomPackage.handleCustomPackage(driver, logWriter);
-                //     logSiteErrors(driver, logWriter);
+                    // ✅ Call CustomPackage after filling the form
+                    CustomPackage.handleCustomPackage(driver, logWriter);
+                    logSiteErrors(driver, logWriter);
 
-                //     // ✅ Call AddNewBuyer after CustomPackage
-                //     AddNewBuyer.addNewBuyer(driver, logWriter);
-                //     logSiteErrors(driver, logWriter);
+                    // ✅ Call AddNewBuyer after CustomPackage
+                    AddNewBuyer.addNewBuyer(driver, logWriter);
+                    logSiteErrors(driver, logWriter);
 
                     // ✅ Call functionallity after AddNewBuyer
                     Functionallity.FunctionallityHandler(driver, logWriter);
