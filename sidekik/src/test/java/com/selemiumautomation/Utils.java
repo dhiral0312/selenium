@@ -72,6 +72,7 @@ public class Utils {
         try {
             // Take screenshot
             File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(screenshot, new File("./screenshots/test-failure.png"));
             // Save screenshot to desired location
             FileUtils.copyFile(screenshot, new File(fileName));
             System.out.println("Screenshot saved: " + fileName);

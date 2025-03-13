@@ -76,19 +76,8 @@ public class FormFiller {
                         &&
                         !Utils.isElementPresent(driver, By.xpath(
                                 "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))) {
-                    logWriter.println("✅ All forms completed. Logging out...");
-                    // Call CustomPackage after filling the form
-                    logWriter.println("🔹 Calling CustomPackage...");
-                    CustomPackage.handleCustomPackage(driver, logWriter);
-
-                    // Call AddNewBuyer after CustomPackage
-                    logWriter.println("🔹 Calling AddNewBuyer...");
-                    AddNewBuyer.addNewBuyer(driver, logWriter);
-
-                    // Perform Logout
-                    logWriter.println("✅ All tasks completed. Logging out...");
-                    Utils.logout(driver, logWriter);
-                    break;
+                    logWriter.println("✅ All forms completed.");
+                    return;
                 }
 
             } catch (Exception e) {
@@ -99,10 +88,6 @@ public class FormFiller {
 
         if (retryCount >= maxRetries) {
             logWriter.println("❌ Max retries reached. No valid form detected. Attempting logout...");
-            Utils.logout(driver, logWriter);
         }
     }
-
-   
-
 }
