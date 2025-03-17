@@ -13,10 +13,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class AddNewBuyer {
     public static void addNewBuyer(WebDriver driver, PrintWriter logWriter) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-    try {
-        WebElement buyersTab = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Buyer')]")));
-        buyersTab.click();
-      // Add New Buyer
+        try {
+            // Click on Buyers tab
+            WebElement buyersTab = wait
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Buyer')]")));
+            buyersTab.click();
+
+            WebElement exportCSV = wait
+                    .until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Export CSV')]")));
+            exportCSV.click();
+            Thread.sleep(3000);
+            logWriter.println("✔ Exported CSV file.");
+            // Add New Buyer
             WebElement addNewBuyer = wait.until(
                     ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Add New Buyer')]")));
             addNewBuyer.click();
@@ -64,8 +72,9 @@ public class AddNewBuyer {
             logWriter.println("✔ Clicked Save button using Tab + Enter method.");
 
             Thread.sleep(3000); // Allow time for the form to submit
-    } catch (Exception e) {
-        logWriter.println("❌ Error adding new buyer: " + e.getMessage());
-    }   
+
+        } catch (Exception e) {
+            logWriter.println("❌ Error adding new buyer: " + e.getMessage());
+        }
+    }
 }
-}   

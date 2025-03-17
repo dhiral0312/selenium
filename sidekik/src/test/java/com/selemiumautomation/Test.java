@@ -77,6 +77,10 @@ public class Test {
                     Functionallity.FunctionallityHandler(driver, logWriter);
                     logSiteErrors(driver, logWriter);
 
+                    // ✅ Call Chat after Functionallity
+                    Chat.chatHandler(driver, logWriter);
+                    logSiteErrors(driver, logWriter);
+
                     logWriter.println("✅ All tasks completed. Logging out...");
                     Utils.logout(driver, logWriter);
 
