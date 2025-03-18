@@ -67,12 +67,12 @@ public class Utils {
 
     public static void takeScreenshot(WebDriver driver, String testName) {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String fileName = "Screenshots/" + testName + "_" + timestamp + ".png";
+        String fileName = "./Screenshots/" + testName + "_" + timestamp + ".png";
 
         try {
             // Take screenshot
             File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(screenshot, new File("./screenshots/test-failure.png"));
+           // FileUtils.copyFile(screenshot, new File("./Screenshots/test-failure.png"));
             // Save screenshot to desired location
             FileUtils.copyFile(screenshot, new File(fileName));
             System.out.println("Screenshot saved: " + fileName);
