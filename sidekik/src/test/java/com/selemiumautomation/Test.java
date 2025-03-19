@@ -24,7 +24,7 @@ public class Test {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         try (CSVReader reader = new CSVReader(new FileReader("C:\\Users\\admin6\\Desktop\\testemail.csv"));
-                PrintWriter logWriter = new PrintWriter(new FileWriter("test_results.txt", true))) {
+                PrintWriter logWriter = new PrintWriter(new FileWriter("./test_results.txt", false))) {
 
             String[] credentials;
 
