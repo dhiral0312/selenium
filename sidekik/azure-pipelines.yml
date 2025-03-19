@@ -4,7 +4,7 @@ trigger:
       - master
 
 schedules:
-- cron: "0 14 * * *"         # Daily at 2:00 PM (cron uses UTC; adjust if needed)
+- cron: "0 14 * * *"         # Daily at 2:00 PM (cron uses UTC)
   displayName: "Daily Build at 2 PM"
   branches:
     include:
@@ -18,24 +18,31 @@ steps:
 - checkout: self
 
 - script: |
-    mvn clean compile
+    mvn -B clean compile
   displayName: 'Maven Clean and Compile'
 
 - script: |
-    mvn test
+    mvn -B test
   displayName: 'Run Tests'
 
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/surefire-reports/*.xml'
+    testResultsFiles: '**/target/surefire-reports/*.xml'
     mergeTestResults: true
     failTaskOnFailedTests: true
   displayName: 'Publish Test Results'
 
 - script: |
-    mvn package
+    mvn -B package
   displayName: 'Maven Package'
+
+# Install PowerShell Modules for Email
+- script: |
+    Install-PackageProvider -Name NuGet -Force
+    Install-Module -Name PowerShellGet -Force -AllowClobber
+    Install-Module -Name Posh-Git -Force -AllowClobber
+  displayName: 'Install Required PowerShell Modules'
 
 # Send email notification with test results
 - task: PowerShell@2
@@ -47,33 +54,36 @@ steps:
       $smtpFrom = "dhiral@zerotimesolutions.com"
       $smtpTo = "kelvin@zerotimesolutions.com"
       $smtpUsername = "dhiral@zerotimesolutions.com"
-      $smtpPassword = $(SMTP_PASSWORD) 
+      $smtpPassword = "$(SMTP_PASSWORD)"
+
+      $buildNumber = "$(Build.BuildNumber)"
+      $buildStatus = "$(Build.Status)"
+      $buildUrl = "$(System.TeamFoundationCollectionUri)$(System.TeamProject)/_build/results?buildId=$(Build.BuildId)"
 
       $subject = "Test Results for Build $buildNumber: $buildStatus"
       $body = @"
-      <p>Test results for Build $buildNumber:</p>
-      <p>Status: $buildStatus</p>
+      <p>Test results for Build <b>$buildNumber</b>:</p>
+      <p>Status: <b>$buildStatus</b></p>
       <p>View details: <a href='$buildUrl'>$buildUrl</a></p>
     "@
 
     try {
-    $smtpClient = New-Object System.Net.Mail.SmtpClient($smtpServer, $smtpPort)
-    $smtpClient.EnableSsl = $true
-    $smtpClient.Credentials = New-Object System.Net.NetworkCredential($smtpUsername, $smtpPassword)
-    
-    $mailMessage = New-Object System.Net.Mail.MailMessage
-    $mailMessage.From = $smtpFrom
-    $mailMessage.To.Add($smtpTo)
-    $mailMessage.Subject = $subject
-    $mailMessage.Body = $body
-    $mailMessage.IsBodyHtml = $true
+      $smtpClient = New-Object System.Net.Mail.SmtpClient($smtpServer, $smtpPort)
+      $smtpClient.EnableSsl = $true
+      $smtpClient.Credentials = New-Object System.Net.NetworkCredential($smtpUsername, $smtpPassword)
+      
+      $mailMessage = New-Object System.Net.Mail.MailMessage
+      $mailMessage.From = $smtpFrom
+      $mailMessage.To.Add($smtpTo)
+      $mailMessage.Subject = $subject
+      $mailMessage.Body = $body
+      $mailMessage.IsBodyHtml = $true
 
-    $smtpClient.Send($mailMessage)
-    Write-Host "Email sent successfully."
-  }
-  catch {
-    Write-Error "Error sending email: $_"
-}
-
+      $smtpClient.Send($mailMessage)
+      Write-Host "Email sent successfully."
+    }
+    catch {
+      Write-Error "Error sending email: $_"
+    }
   condition: always()
-  displayName: 'Send Email Notification'   
+  displayName: 'Send Email Notification'

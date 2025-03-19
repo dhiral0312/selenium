@@ -72,7 +72,7 @@ public class Utils {
         try {
             // Take screenshot
             File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-           // FileUtils.copyFile(screenshot, new File("./Screenshots/test-failure.png"));
+            // FileUtils.copyFile(screenshot, new File("./Screenshots/test-failure.png"));
             // Save screenshot to desired location
             FileUtils.copyFile(screenshot, new File(fileName));
             System.out.println("Screenshot saved: " + fileName);
@@ -81,75 +81,84 @@ public class Utils {
         }
     }
 
-    public static void selectDate(WebDriver driver, WebDriverWait wait, String dateButtonXpath, int daysToAdd,
-            PrintWriter logWriter) {
+    // ✅ Select Date from Date Picker (Works for both Start & End Date)
+    public static void selectDate(WebDriver driver, WebDriverWait wait, String dateButtonXpath, int daysFromToday, String dateType, PrintWriter logWriter) {
         try {
-            // ✅ Click on Date Picker Button
+            // Click the Date Button to Open the Picker
             WebElement dateButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(dateButtonXpath)));
             dateButton.click();
-            logWriter.println("📅 Clicked on Date Picker Button.");
-
-            // ✅ Wait for Date Picker Dialog to Open
-            @SuppressWarnings("unused")
-            WebElement datePickerDialog = wait
-                    .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@role='dialog']")));
-            logWriter.println("📅 Date Picker Dialog Opened.");
-
-            // ✅ Calculate Target Date
-            LocalDate targetDate = LocalDate.now().plusDays(daysToAdd);
+            logWriter.println("📅 Clicked on " + dateType + " Date button.");
+    
+            // Wait for Date Picker to Appear
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@role='dialog']")));
+    
+            // Get Today's Date and Target Date
+            LocalDate targetDate = LocalDate.now().plusDays(daysFromToday);
             String targetDay = targetDate.format(DateTimeFormatter.ofPattern("d")); // Extracts only the day number
-
-            // ✅ Get All Selectable Dates
-            List<WebElement> dateOptions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
-                    By.xpath("//button[contains(@class, 'h-8') and not(contains(@aria-label, 'Today'))]")));
-
+    
             boolean dateSelected = false;
-
-            for (WebElement dateOption : dateOptions) {
-                String dayText = dateOption.getText().trim();
-                if (dayText.equals(targetDay)) {
-                    try {
-                        Actions actions = new Actions(driver);
-                        actions.moveToElement(dateOption).pause(300).click().perform(); // First Click Attempt
-                        Thread.sleep(500);
-
-                        // ✅ Confirm Selection by Checking the Field Value
-                        if (!dateButton.getText().contains(targetDay)) {
-                            actions.moveToElement(dateOption).pause(300).click().perform();
-                            Thread.sleep(500);
+            int attempts = 0;
+    
+            while (!dateSelected && attempts < 3) { // Retry up to 3 times
+                try {
+                    // Re-locate all selectable dates (to avoid stale elements)
+                    List<WebElement> dateOptions = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+                            By.xpath("//button[contains(@class, 'h-8') and not(contains(@aria-label, 'Today'))]")));
+    
+                    for (WebElement dateOption : dateOptions) {
+                        String dayText = dateOption.getText().trim();
+                        if (dayText.equals(targetDay)) {
+                            try {
+                                Actions actions = new Actions(driver);
+                                actions.moveToElement(dateOption).pause(300).click().perform();
+                                Thread.sleep(500); // Wait for selection to register
+    
+                                // **Verify if the date is set in the field**
+                                if (!dateButton.getText().contains(targetDay)) {
+                                    logWriter.println("⚠️ Date not updated in field! Retrying...");
+                                    throw new Exception("Date not set, retrying...");
+                                }
+    
+                                logWriter.println("✔ Successfully selected " + dateType + " Date: " + targetDay);
+                                dateSelected = true;
+                                break;
+    
+                            } catch (Exception clickError) {
+                                logWriter.println("⚠️ Click failed, retrying...");
+                            }
                         }
-
-                        logWriter.println("✔ Selected Date: " + targetDay);
-                        dateSelected = true;
-                        break;
-                    } catch (Exception clickError) {
-                        logWriter.println("⚠️ Could not click on date, retrying.");
                     }
+    
+                } catch (Exception e) {
+                    logWriter.println("⚠️ Stale element encountered, retrying...");
                 }
+                attempts++;
             }
-
-            // ✅ If Preferred Date Isn’t Found, Select a Random Available Date
+    
             if (!dateSelected) {
-                logWriter.println("⚠️ Target date not found. Selecting a random available date.");
+                logWriter.println("⚠️ Target " + dateType + " date not found, selecting a random available date.");
+                List<WebElement> dateOptions = wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(
+                        By.xpath("//button[contains(@class, 'h-8') and not(contains(@aria-label, 'Today'))]")));
+    
                 if (!dateOptions.isEmpty()) {
                     WebElement randomDate = dateOptions.get(new Random().nextInt(dateOptions.size()));
-                    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", randomDate);
-                    logWriter.println("✔ Selected Random Available Date: " + randomDate.getText());
+                    randomDate.click();
+                    logWriter.println("✔ Selected Random Available " + dateType + " Date: " + randomDate.getText());
                 } else {
                     logWriter.println("⚠️ No selectable dates found.");
                 }
             }
-
-            // ✅ Force Close Date Picker if It Stays Open
-            try {
-                WebElement body = driver.findElement(By.tagName("body"));
-                body.click();
-                Thread.sleep(500);
-            } catch (Exception ignore) {
-            }
-
+    
+            // Click Outside to Close Date Picker
+            WebElement body = driver.findElement(By.tagName("body"));
+            body.click();
+            logWriter.println("📅 Clicked outside to confirm selection.");
+    
+            // Small delay to ensure selection registers
+            Thread.sleep(1000);
+    
         } catch (Exception e) {
-            logWriter.println("❌ Error selecting date: " + e.getMessage());
+            logWriter.println("❌ Error selecting " + dateType + " Date: " + e.getMessage());
         }
     }
 

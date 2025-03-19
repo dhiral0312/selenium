@@ -69,15 +69,14 @@ public class CustomPackage {
             }
             // ✅ Select Start Date (2 days from today)
             Utils.selectDate(driver, wait,
-                    "(//button[contains(@class, 'text-left') and contains(@class, 'border-gray-300')])[1]", 2,
+                    "(//button[contains(@class, 'text-left') and contains(@class, 'border-gray-300')])[1]", 2, "Start",
                     logWriter);
 
             // ✅ Select End Date (5 days from today)
             Thread.sleep(1000); // Ensures Start Date picker is closed before opening End Date
             Utils.selectDate(driver, wait,
-                    "(//button[contains(@class, 'text-left') and contains(@class, 'border-gray-300')])[2]", 5,
+                    "(//button[contains(@class, 'text-left') and contains(@class, 'border-gray-300')])[2]", 5, "End",
                     logWriter);
-
             // Add New Buyer
             WebElement addNewBuyer = wait.until(
                     ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(text(),'Add New Buyer')]")));

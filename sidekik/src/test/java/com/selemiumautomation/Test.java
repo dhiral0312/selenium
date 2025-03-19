@@ -62,7 +62,7 @@ public class Test {
                     logSiteErrors(driver, logWriter);
 
                     // ✅ Corrected FormFiller call with all required parameters
-                   FormFiller.fillForm(driver, logWriter, profileImagePath, email);
+                    FormFiller.fillForm(driver, logWriter, profileImagePath, email);
                     logSiteErrors(driver, logWriter);
 
                     // ✅ Call CustomPackage after filling the form
