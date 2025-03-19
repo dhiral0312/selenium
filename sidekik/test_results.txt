@@ -2,6 +2,7 @@ Logging in with username: carrymathus@yopmail.com
 ✅ Successfully logged in.
 ⚠️ Error messages found:
   Login successful.
+<<<<<<< HEAD
 🔹 Clicking 'Custom Packages' button...
 ✅ Clicked on 'Add New Package' button.
 ✔ Filled title with: hokbtpza
@@ -124,3 +125,466 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Command: [d2faf392a622889a19c9a75b019c7c92, findElement {using=xpath, value=//img[contains(@class, 'rounded-full') and contains(@class, 'object-cover')]}]
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Users\admin6\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49910}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49910/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: d2faf392a622889a19c9a75b019c7c92
+=======
+🔹 Clicking 'Complete your profile' button...
+🔍 Checking which form is displayed...
+🔍 Waiting for the next form... (Attempt 1/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+🔍 Waiting for the next form... (Attempt 2/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+🔍 Waiting for the next form... (Attempt 3/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+🔍 Waiting for the next form... (Attempt 4/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+🔍 Waiting for the next form... (Attempt 5/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+❌ Max retries reached. No valid form detected. Attempting logout...
+✅ No error messages found.
+🔹 Clicking 'Custom Packages' button...
+✅ Clicked on 'Add New Package' button.
+✔ Filled title with: sojhwfzb
+✔ Filled subTitle with: sojhwfzb
+✔ Entered Price: 50
+❌ Error selecting service in Custom Package form: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, getElementText {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.85}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //div[@role='option']]
+Session ID: 581003baaff67e4f4149e0b316780857
+📅 Clicked on Date Picker Button.
+📅 Date Picker Dialog Opened.
+✔ Selected Date: 21
+📅 Clicked on Date Picker Button.
+📅 Date Picker Dialog Opened.
+❌ Error selecting date: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, isElementDisplayed {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.99}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //button[contains(@class, 'h-8') and not(contains(@aria-label, 'Today'))]]
+Session ID: 581003baaff67e4f4149e0b316780857
+✔ Filled firstName with: sojhwfzb
+✔ Filled lastName with: sojhwfzb
+✔ Filled email with: sojhwfzb@gmail.com
+❌ Error selecting Country: element click intercepted: Element <button type="button" role="combobox" aria-controls="radix-:r1g:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" class="flex h-9 items-center justify-between whitespace-nowrap border border-gray-300 px-3 shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1 w-full text-md py-6 bg-white selection:bg-background rounded-md">...</button> is not clickable at point (564, 604). Other element would receive the click: <div role="dialog" id="radix-:r1h:" aria-describedby="radix-:r1j:" aria-labelledby="radix-:r1i:" data-state="open" class="fixed left-[50%] top-[50%] z-900 translate-x-[-50%] translate-y-[-50%] border bg-background shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg h-max w-[80vw] p-8 flex flex-col gap-8" tabindex="-1" style="pointer-events: auto;">...</div>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.193}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: (//button[@role='combobox'])[2]]
+Session ID: 581003baaff67e4f4149e0b316780857
+📌 Clicked on State dropdown.
+❌ Error selecting State: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, getElementText {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.241}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //div[@role='option']]
+Session ID: 581003baaff67e4f4149e0b316780857
+📌 Clicked on City dropdown.
+❌ Error selecting City: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, getElementText {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.464}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //div[@role='option']]
+Session ID: 581003baaff67e4f4149e0b316780857
+📌 Clicked on Language input field.
+❌ Error selecting language: Expected condition failed: waiting for visibility of all elements located by By.xpath: //div[@role='option'] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+🏢 Clicked on Company Name field.
+✔ Filled companyName with: sojhwfzb
+🏢 Entered Company Name: sojhwfzb
+✔ Clicked Save button using Tab + Enter method.
+📌 Clicked Buyer dropdown.
+⚠️ Buyer with name containing 'sojhwfzb' not found.
+❌ Error clicking Submit: element click intercepted: Element <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-9 px-2 bg-sk-red hover:bg-sk-red/90 w-44 text-background drop-shadow-md py-5" type="submit">...</button> is not clickable at point (896, 609). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.721}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //button[contains(@class, 'bg-sk-red') and contains(text(), 'Save')]]
+Session ID: 581003baaff67e4f4149e0b316780857
+❌ Error handling Custom Package: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(text(), 'Add Milestone')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+✅ No error messages found.
+❌ Error adding new buyer: element click intercepted: Element <a class="group relative min-w-[2.5rem] flex  items-center gap-2.5 p-2  font-medium text-white null" href="/service-provider/buyer-listing">...</a> is not clickable at point (128, 400). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.724}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //a[contains(text(),'Buyer')]]
+Session ID: 581003baaff67e4f4149e0b316780857
+✅ No error messages found.
+❌ Error in FunctionallityHandler: element click intercepted: Element <a class="group relative min-w-[2.5rem] flex  items-center gap-2.5 p-2  font-medium text-white bg-sk-red border-sk-red-light border rounded-md font-semibold" href="/service-provider/custom-packages">...</a> is not clickable at point (128, 291). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.49}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //a[contains(text(),'Custom Packages')]]
+Session ID: 581003baaff67e4f4149e0b316780857
+✅ No error messages found.
+❌ Error in chat module: element click intercepted: Element <a class="group relative min-w-[2.5rem] flex  items-center gap-2.5 p-2  font-medium text-white null" href="/service-provider/chat">...</a> is not clickable at point (128, 454). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.725}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //a[contains(text(), 'Chat')]]
+Session ID: 581003baaff67e4f4149e0b316780857
+✅ No error messages found.
+✅ All tasks completed. Logging out...
+🔹 Logging out...
+❌ Error logging out: element click intercepted: Element <img alt="User" width="100" height="100" decoding="async" data-nimg="1" class="rounded-full object-cover h-12 w-12 " src="https://sidekik-dev.s3.ap-southeast-2.amazonaws.com/profile_picture/PHEfHXApUg_1741772549706.jpg" style="color: transparent;"> is not clickable at point (803, 44). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.C87FBCBF08117627E5B37315353E3758.e.726}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //img[contains(@class, 'rounded-full') and contains(@class, 'object-cover')]]
+Session ID: 581003baaff67e4f4149e0b316780857
+Logging in with username: user name@domain.com
+✅ Successfully logged in.
+✅ No error messages found.
+🔹 Clicking 'Complete your profile' button...
+🔍 Checking which form is displayed...
+🔍 Waiting for the next form... (Attempt 1/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+🔍 Waiting for the next form... (Attempt 2/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+🔍 Waiting for the next form... (Attempt 3/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+🔍 Waiting for the next form... (Attempt 4/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+🔍 Waiting for the next form... (Attempt 5/5)
+❌ Error detecting form: Expected condition failed: waiting for at least one condition to be valid: presence of element located by: By.name: firstName || presence of element located by: By.name: shortIntro || presence of element located by: By.name: bankName || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')] || presence of element located by: By.xpath: //button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')] (tried for 15 second(s) with 500 milliseconds interval)
+❌ Max retries reached. No valid form detected. Attempting logout...
+✅ No error messages found.
+🔹 Clicking 'Custom Packages' button...
+✅ Clicked on 'Add New Package' button.
+✔ Filled title with: awqsodhw
+✔ Filled subTitle with: awqsodhw
+✔ Entered Price: 50
+❌ Error selecting service in Custom Package form: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, getElementText {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.804}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //div[@role='option']]
+Session ID: 581003baaff67e4f4149e0b316780857
+📅 Clicked on Date Picker Button.
+📅 Date Picker Dialog Opened.
+✔ Selected Date: 21
+📅 Clicked on Date Picker Button.
+📅 Date Picker Dialog Opened.
+❌ Error selecting date: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, isElementDisplayed {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.822}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //button[contains(@class, 'h-8') and not(contains(@aria-label, 'Today'))]]
+Session ID: 581003baaff67e4f4149e0b316780857
+✔ Filled firstName with: awqsodhw
+✔ Filled lastName with: awqsodhw
+✔ Filled email with: awqsodhw@gmail.com
+❌ Error selecting Country: element click intercepted: Element <button type="button" role="combobox" aria-controls="radix-:r1g:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" class="flex h-9 items-center justify-between whitespace-nowrap border border-gray-300 px-3 shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1 w-full text-md py-6 bg-white selection:bg-background rounded-md">...</button> is not clickable at point (564, 604). Other element would receive the click: <div role="dialog" id="radix-:r1h:" aria-describedby="radix-:r1j:" aria-labelledby="radix-:r1i:" data-state="open" class="fixed left-[50%] top-[50%] z-900 translate-x-[-50%] translate-y-[-50%] border bg-background shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg h-max w-[80vw] p-8 flex flex-col gap-8" tabindex="-1" style="pointer-events: auto;">...</div>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.916}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: (//button[@role='combobox'])[2]]
+Session ID: 581003baaff67e4f4149e0b316780857
+📌 Clicked on State dropdown.
+❌ Error selecting State: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, getElementText {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1136}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //div[@role='option']]
+Session ID: 581003baaff67e4f4149e0b316780857
+📌 Clicked on City dropdown.
+❌ Error selecting City: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, getElementText {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1172}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //div[@role='option']]
+Session ID: 581003baaff67e4f4149e0b316780857
+📌 Clicked on Language input field.
+❌ Error selecting language: Expected condition failed: waiting for visibility of all elements located by By.xpath: //div[@role='option'] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+🏢 Clicked on Company Name field.
+✔ Filled companyName with: awqsodhw
+🏢 Entered Company Name: awqsodhw
+✔ Clicked Save button using Tab + Enter method.
+📌 Clicked Buyer dropdown.
+❌ Error selecting buyer: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, getElementText {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1414}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //div[@role='option']]
+Session ID: 581003baaff67e4f4149e0b316780857
+📌 Clicked 'Submit' button.
+❌ Error handling Custom Package: Expected condition failed: waiting for element to be clickable: By.xpath: //button[contains(text(), 'Add Milestone')] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error messages found:
+  End Date is required
+✔ Exported CSV file.
+✔ Filled firstName with: rporrwbs
+✔ Filled lastName with: rporrwbs
+✔ Filled email with: rporrwbs@gmail.com
+📌 Clicked on Country dropdown.
+❌ Error selecting Country: Expected condition failed: waiting for visibility of all elements located by By.xpath: //div[@role='option'] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+❌ Error selecting State: element click intercepted: Element <button type="button" role="combobox" aria-controls="radix-:r15q:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" class="flex h-9 items-center justify-between whitespace-nowrap border border-gray-300 px-3 shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1 w-full text-md py-6 bg-white rounded-md">...</button> is not clickable at point (798, 339). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1701}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: (//button[@role='combobox'])[2]]
+Session ID: 581003baaff67e4f4149e0b316780857
+❌ Error selecting City: element click intercepted: Element <button type="button" role="combobox" aria-controls="radix-:r15s:" aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed" data-placeholder="" class="flex h-9 items-center justify-between whitespace-nowrap border border-gray-300 px-3 shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1 w-full text-md py-6 bg-white selection:bg-background rounded-md">...</button> is not clickable at point (474, 453). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1702}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: (//button[@role='combobox'])[3]]
+Session ID: 581003baaff67e4f4149e0b316780857
+❌ Error selecting language: element click intercepted: Element <input class="flex-1 bg-transparent outline-none placeholder:text-muted-foreground w-fit px-3 py-2" cmdk-input="" autocomplete="off" autocorrect="off" spellcheck="false" aria-autocomplete="list" role="combobox" aria-expanded="true" aria-controls="radix-:r15u:" aria-labelledby="radix-:r15v:" id="radix-:r160:" type="text" value=""> is not clickable at point (782, 453). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1440}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> xpath: //input[@role='combobox' and contains(@class,'bg-transparent')]]
+Session ID: 581003baaff67e4f4149e0b316780857
+❌ Error entering Company Name: element click intercepted: Element <input class="peer flex-1 bg-transparent w-full outline-none py-3 text-inherit disabled:cursor-not-allowed disabled:opacity-50" placeholder="Enter Company Name" id=":r161:-form-item" aria-describedby=":r161:-form-item-description" aria-invalid="false" value="" name="companyName"> is not clickable at point (636, 567). Other element would receive the click: <html style="">...</html>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1441}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> name: companyName]
+Session ID: 581003baaff67e4f4149e0b316780857
+❌ Error adding new buyer: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1451}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [org.openqa.selenium.remote.RemoteWebElement@59bd59a -> unknown locator]
+Session ID: 581003baaff67e4f4149e0b316780857
+✅ No error messages found.
+Navigated to Custom Packages
+⚠️ Error interacting with button container: no such element: Unable to locate element: {"method":"css selector","selector":".lucide-eye"}
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1706, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+✅ Eye button clicked - Viewing details
+🔙 Navigated back from view
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1708, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1709, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1710, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1711, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1712, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1713, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1714, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1715, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+⚠️ Error interacting with button container: stale element reference: stale element not found in the current frame
+  (Session info: chrome=134.0.6998.89)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, findChildElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1716, using=css selector, value=.lucide-eye}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 581003baaff67e4f4149e0b316780857
+❌ Error in FunctionallityHandler: element click intercepted: Element <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-copy-plus text-sk-blue h-6 w-6 cursor-pointer">...</svg> is not clickable at point (308, 124). Other element would receive the click: <div class="flex flex-row justify-end bg-sk-bg-light items-center w-full sticky top-0 pt-6 z-100 pb-6 pr-8">...</div>
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-BM4M15B', ip: '192.168.1.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.6'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [581003baaff67e4f4149e0b316780857, clickElement {id=f.323FA525EDF968D1DC6BDC043605541C.d.0040BDD2EF95BE9333EE076EDE86D7A0.e.1738}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 133.0.6943.53 (9a80935019b0..., userDataDir: C:\Windows\SystemTemp\scope...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50244}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50244/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (581003baaff67e4f4149e0b316780857)] -> css selector: .flex.justify-center.items-center .lucide-copy-plus]
+Session ID: 581003baaff67e4f4149e0b316780857
+✅ No error messages found.
+💬 Clicked on the chat button.
+✅ Chat list is visible.
+📩 Opened the first chat in the list.
+✅ Chat window is open.
+✍️ Entered test message in chat.
+📩 Clicked send button.
+✅ Message sent successfully.
+⚠️ Unable to find message read/unread state.
+✅ No error messages found.
+✅ All tasks completed. Logging out...
+🔹 Logging out...
+✅ Successfully logged out.
+Logging in with username: user@domain#mail.com
+❌ Login failed for user: user@domain#mail.com
+Logging in with username: user@domain.c
+❌ Login failed for user: user@domain.c
+Logging in with username: user@domain@domain.com
+❌ Login failed for user: user@domain@domain.com
+Logging in with username: user@domain.com
+❌ Login failed for user: user@domain.com
+Logging in with username: plainaddress
+❌ Login failed for user: plainaddress
+Logging in with username: @missingusername.com
+❌ Login failed for user: @missingusername.com
+Logging in with username: username@.com
+❌ Login failed for user: username@.com
+Logging in with username: user@domain..com
+❌ Login failed for user: user@domain..com
+Logging in with username: user@domain
+❌ Login failed for user: user@domain
+Logging in with username: john.doe@example.com
+❌ Login failed for user: john.doe@example.com
+Logging in with username: jane_doe123@mail.co.uk
+❌ Login failed for user: jane_doe123@mail.co.uk
+Logging in with username: user+alias@gmail.com
+❌ Login failed for user: user+alias@gmail.com
+Logging in with username: name.lastname@company.org
+❌ Login failed for user: name.lastname@company.org
+Logging in with username: 123456@domain.io
+❌ Login failed for user: 123456@domain.io
+>>>>>>> origin/main
