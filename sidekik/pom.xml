@@ -158,15 +158,6 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
           <version>3.0.0</version>
-          <configuration>
-            <mainClass>com.selemiumautomation.Test</mainClass>
-             <classpathScope>test</classpathScope>
-          </configuration>
-        </plugin>
-        <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>exec-maven-plugin</artifactId>
-          <version>3.0.0</version>
           <executions>
             <execution>
               <goals>
@@ -176,6 +167,7 @@
           </executions>
           <configuration>
             <mainClass>com.selemiumautomation.Test</mainClass>
+            <classpathScope>test</classpathScope>
           </configuration>
         </plugin>
         <plugin>
