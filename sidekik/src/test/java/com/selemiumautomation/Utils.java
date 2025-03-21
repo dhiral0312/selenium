@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -42,6 +43,26 @@ public class Utils {
             }
         } catch (Exception e) {
             logWriter.println("⚠️ Could not select " + fieldName + ": " + e.getMessage());
+        }
+    }
+
+    public static boolean hasDropdownOptions(WebDriver driver, String dropdownXPath) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            
+            // Click dropdown to check for options
+            WebElement dropdown = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(dropdownXPath)));
+            dropdown.click();
+            
+            // Wait for options to be visible
+            List<WebElement> options = wait.until(
+                ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@role='option']"))
+            );
+    
+            // If options exist, return true, else false
+            return !options.isEmpty();
+        } catch (Exception e) {
+            return false; // No options found
         }
     }
 

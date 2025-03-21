@@ -38,11 +38,19 @@ public class AddNewBuyer {
             // ✅ Select Country (Dropdown 2)
             Utils.selectDropdown(driver, wait, "(//button[@role='combobox'])[1]", "Country", logWriter);
 
-            // ✅ Select State (Dropdown 3)
-            Utils.selectDropdown(driver, wait, "(//button[@role='combobox'])[2]", "State", logWriter);
+            // ✅ Select State (Dropdown 3) - **Only if options are available**
+            if (Utils.hasDropdownOptions(driver, "(//button[@role='combobox'])[2]")) {
+                Utils.selectDropdown(driver, wait, "(//button[@role='combobox'])[2]", "State", logWriter);
+            } else {
+                logWriter.println("⚠️ No State options available. Skipping...");
+            }
 
-            // ✅ Select City (Dropdown 4)
-            Utils.selectDropdown(driver, wait, "(//button[@role='combobox'])[3]", "City", logWriter);
+            // ✅ Select City (Dropdown 4) - **Only if options are available**
+            if (Utils.hasDropdownOptions(driver, "(//button[@role='combobox'])[3]")) {
+                Utils.selectDropdown(driver, wait, "(//button[@role='combobox'])[3]", "City", logWriter);
+            } else {
+                logWriter.println("⚠️ No City options available. Skipping...");
+            }
             // ✅ Select Language (Ensures dropdown closes after selection)
             Utils.selectLanguage(driver, wait, "//input[@role='combobox' and contains(@class,'bg-transparent')]",
                     logWriter);

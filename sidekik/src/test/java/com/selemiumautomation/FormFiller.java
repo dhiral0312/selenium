@@ -9,7 +9,7 @@ import java.time.Duration;
 public class FormFiller {
 
     public static void fillForm(WebDriver driver, PrintWriter logWriter, String profileImagePath, String email) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         int retryCount = 0;
         final int maxRetries = 5; // Prevent infinite loop
 
@@ -37,7 +37,9 @@ public class FormFiller {
                         ExpectedConditions.presenceOfElementLocated(By.xpath(
                                 "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]")),
                         ExpectedConditions.presenceOfElementLocated(By.xpath(
-                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))));
+                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]")),
+                        ExpectedConditions.presenceOfElementLocated(By.xpath(
+                                "//h2[contains(@class, 'text-xl') and contains(@class, 'font-bold') and contains(@class, 'mb-6')]"))));
 
                 if (Utils.isElementPresent(driver, By.name("firstName"))) {
                     logWriter.println("✅ Detected 'Basic Details' Form.");
@@ -56,7 +58,10 @@ public class FormFiller {
                         "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))) {
                     logWriter.println("✅ Detected 'My Package' Form.");
                     PackageForm.fill(driver, logWriter);
-                } else {
+                } else if (Utils.isElementPresent(driver, By.xpath("//h2[contains(@class, 'text-xl') and contains(@class, 'font-bold') and contains(@class, 'mb-6')]"))) {
+                    logWriter.println("✅ Detected 'Summary' Form."); 
+                    Summary.summaryForm(driver, logWriter);
+                }else {
                     retryCount++;
                     logWriter.println("⚠️ No recognizable form detected. Retrying in 2 seconds...");
                     Thread.sleep(2000);
@@ -72,10 +77,11 @@ public class FormFiller {
                         !Utils.isElementPresent(driver, By.name("shortIntro")) &&
                         !Utils.isElementPresent(driver, By.name("bankName")) &&
                         !Utils.isElementPresent(driver, By.xpath(
-                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]"))
-                        &&
+                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Portfolio')]"))&&
                         !Utils.isElementPresent(driver, By.xpath(
-                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))) {
+                                "//button[contains(@class, 'bg-sk-blue') and contains(@class, 'text-background') and contains(@class, 'flex') and contains(text(), 'Add New Package')]"))&&
+                        !Utils.isElementPresent(driver, By.xpath(
+                                "//h2[contains(@class, 'text-xl') and contains(@class, 'font-bold') and contains(@class, 'mb-6')]"))) {
                     logWriter.println("✅ All forms completed.");
                     return;
                 }
