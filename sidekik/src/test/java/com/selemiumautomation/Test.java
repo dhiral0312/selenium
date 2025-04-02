@@ -6,11 +6,14 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import com.opencsv.CSVReader;
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test {
 
@@ -20,9 +23,15 @@ public class Test {
 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--headless");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+        // options.addArguments("--headless");
+        // options.addArguments("--no-sandbox");
+        // options.addArguments("--disable-dev-shm-usage");
+
+        options.addArguments("start-maximized");
+
+        options.addArguments("disable-infobars");
+
+        options.addArguments("--disable-extensions");
         WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -52,10 +61,29 @@ public class Test {
 
                 WebElement usernameField = driver.findElement(By.name("email"));
                 WebElement passwordField = driver.findElement(By.name("password"));
-                WebElement loginButton = driver.findElement(By.xpath("//button[text()='Log in']"));
 
                 usernameField.sendKeys(username);
                 passwordField.sendKeys(password);
+                try {
+                    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+                
+                    // ✅ Switch to reCAPTCHA iframe
+                    wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[contains(@src, 'https://www.google.com/recaptcha')]")));
+                
+                    // ✅ Try clicking the outer border (since it is intercepting clicks)
+                    WebElement recaptchaBorder = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(".recaptcha-checkbox-border")));
+                    recaptchaBorder.click();
+                    
+                    logWriter.println("✅ reCAPTCHA clicked successfully.");
+                
+                    // ✅ Switch back to main content
+                    driver.switchTo().defaultContent();
+                
+                } catch (Exception e) {
+                    logWriter.println("⚠️ reCAPTCHA handling failed: " + e.getMessage());
+                }
+                Thread.sleep(5000); // Allow time for reCAPTCHA
+                WebElement loginButton = driver.findElement(By.xpath("//button[text()='Log in']"));
                 loginButton.click();
 
                 Thread.sleep(5000); // Allow time for login
@@ -105,8 +133,12 @@ public class Test {
         try {
             // Find all error messages on the page
             List<WebElement> errorMessages = driver.findElements(By.xpath(
-                    "//*[contains(@class, 'text-[0.8rem] font-medium text-sk-red text-left pl-4') or " + // Case 1:Invalid Email, Password
-                            "contains(@class, 'border-sk-red bg-sk-red text-background') or " + // Case 2: Toast Error Message
+                    "//*[contains(@class, 'text-[0.8rem] font-medium text-sk-red text-left pl-4') or " + // Case
+                                                                                                         // 1:Invalid
+                                                                                                         // Email,
+                                                                                                         // Password
+                            "contains(@class, 'border-sk-red bg-sk-red text-background') or " + // Case 2: Toast Error
+                                                                                                // Message
                             "contains(@class, 'text-sm font-semibold')]" // Case 3: Toast Inner Message
             ));
 
